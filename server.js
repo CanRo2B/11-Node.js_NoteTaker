@@ -1,4 +1,6 @@
 const express = require("express");
+const path = require("path");
+const fs = require("fs");
 // Todo: Add the required routes for our api/html
 const apiRoutes = require("./Routes/apiRoutes");
 const htmlRoutes = require("./Routes/htmlRoutes");
