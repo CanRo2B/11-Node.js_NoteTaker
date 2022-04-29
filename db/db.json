@@ -1,6 +1,34 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title": "Test Title",
+        "text": "Test text"
+    },
+    {
+        "title": "making notes",
+        "text": "This did work"
+    },
+    {
+        "title": "Getting notes",
+        "text": "Then console logging is key"
+    },
+    {
+        "title": "Take notes",
+        "text": "Can be fun!"
+    },
+    {
+        "title": "Look at this",
+        "text": "Look at htis note\n"
+    },
+    {
+        "title": "notes",
+        "text": "And more"
+    },
+    {
+        "title": "Notes galore",
+        "text": "All these notes"
+    },
+    {
+        "title": "Does this work",
+        "text": "now"
     }
 ]

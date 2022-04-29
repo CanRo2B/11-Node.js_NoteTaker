@@ -1,8 +1,10 @@
 // Todo: Require the router and db items needed (video 17:35)
+const { application } = require("express");
 const path = require("path");
 const api = require("express").Router();
 const { readFromFile, readAndAppend } = require("../db/store");
 const uuid = require("../db/uuid");
+const router = require("./htmlRoutes");
 
 // Get all the notes and send them to the left side of the site
 api.get("/notes", (req, res) => {
@@ -27,6 +29,7 @@ api.post("/notes", (req, res) => {
     } else {
         res.error("Error in creating Note")
     }
+    
 });
 
 
