@@ -1,20 +1,33 @@
 // Todo: Require the router and db items needed (video 17:35)
 const path = require("path");
 const api = require("express").Router();
-// const store = require("../.db.json")
+const { readFromFile, readAndAppend } = require("../db/store");
+const uuid = require("../db/uuid");
 
-// Todo: Set up a get/post/delete methods as responses to the database
-api.get("./api/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "db.json").then((data) => res.json(JSON.parse(data))));
+// Get all the notes and send them to the left side of the site
+api.get("/notes", (req, res) => {
+    console.info(`Notes received`);
+    readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
-api.post("./api/notes", (req, res) => {
-    data.db.push(req.body);
+api.post("/notes", (req, res) => {
+    console.info("Notes added");
+    console.log(req.body);
+
+    const { title, text } = req.body;
+
+    if (req.body) {
+        const newNote = {
+            title,
+            text
+        };
+
+        readAndAppend(newNote, "./db/db.json");
+        res.json("Note added");
+    } else {
+        res.error("Error in creating Note")
+    }
 });
 
-api.delete("./api/notes", (req,res) => {
-    data.db.length = 0,
-    res.send("Note not created");
-});
 
-module.exports = api
+module.exports = api;

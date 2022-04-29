@@ -12,5 +12,6 @@ router.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
+
 // Todo: Export the routes
 module.exports = router;
