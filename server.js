@@ -6,6 +6,7 @@ const htmlRoutes = require("./routes/htmlRoutes");
 
 // Initialize the app and create a port
 const app = express();
+// Dynamic port
 const PORT = process.env.PORT || 3001;
 
 // Todo: Set up some body parsing, static, and route the middleware
