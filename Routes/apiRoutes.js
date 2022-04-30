@@ -2,8 +2,8 @@
 const api = require("express").Router();
 const {v4: uuidv4 } = require("uuid");
 const {readFromFile,
-readAndAppend,
-writeToFile, } = require("../db/store");
+        readAndAppend,
+        writeToFile, } = require("../db/store");
 
 // Get all the notes and send them to the left side of the site
 api.get("/notes", (req, res) => {
@@ -12,7 +12,7 @@ api.get("/notes", (req, res) => {
 });
 
 // GET Route for a note id
-api.get('/notes:id', (req, res) => {
+api.get('/notes/:id', (req, res) => {
     const noteId = req.params.id;
     readFromFile(".db/db.json")
       .then((data) => JSON.parse(data))
@@ -25,7 +25,7 @@ api.get('/notes:id', (req, res) => {
   });
 
 // DELETE Route for a specific note
-api.delete('/notes:id', (req, res) => {
+api.delete('/notes/:id', (req, res) => {
     const noteId = req.params.id;
     readFromFile('./db/db.json')
       .then((data) => JSON.parse(data))
@@ -33,11 +33,11 @@ api.delete('/notes:id', (req, res) => {
         // Make a new array of all notes except the one with the ID provided in the URL
         const result = json.filter((note) => note.id !== noteId);
   
-        // Save that array to the filesystem
+        // Save to the filesystem
         writeToFile('./db/db.json', result);
   
         // Respond to the DELETE request
-        res.json(`Item ${noteId} has been deleted 🗑️`);
+        res.json(`Item ${noteId} has been deleted`);
       });
   });
 

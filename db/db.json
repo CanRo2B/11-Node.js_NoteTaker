@@ -5,11 +5,6 @@
         "id": "0e4cb8b8-8401-40d8-94be-2cfa6ce6870a"
     },
     {
-        "title": "Creating notes",
-        "text": "Create notes to delete",
-        "id": "8b3ac372-c9c8-4b7b-8bb3-52b486fc9584"
-    },
-    {
         "title": "Dinner Ideas",
         "text": "Spaghetti\nSteak\nStuffed Peppers",
         "id": "0a8e0528-51a7-4e75-ad0d-cb7edbd70999"
@@ -18,5 +13,10 @@
         "title": "Github hints",
         "text": "git add -A\ngit commit -m \"comment\"\ngit push origin main",
         "id": "ac338dbd-7add-4150-bb0f-26b2fde41f6e"
+    },
+    {
+        "title": "Baseball Supplies",
+        "text": "Baseball bag\nCleats\nUniform\n2 hats\nCooler\nWater bottle\nChair",
+        "id": "43566799-76e5-4e92-8a85-e651fed15612"
     }
 ]
