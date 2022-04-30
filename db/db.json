@@ -1,49 +1,17 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
-    },
-    {
-        "title": "making notes",
-        "text": "This did work"
-    },
-    {
-        "title": "Getting notes",
-        "text": "Then console logging is key"
-    },
-    {
-        "title": "Take notes",
-        "text": "Can be fun!"
-    },
-    {
-        "title": "Look at this",
-        "text": "Look at htis note\n"
-    },
-    {
-        "title": "notes",
-        "text": "And more"
-    },
-    {
-        "title": "Notes galore",
-        "text": "All these notes"
-    },
-    {
-        "title": "Does this work",
-        "text": "now"
-    },
-    {
-        "title": "Hello notes",
-        "text": "Will you save",
-        "id": "988e0c4c-0e17-4b50-bab3-92a7b4850cc9"
-    },
-    {
-        "title": "Console log",
-        "text": "Chickfil A stinks",
-        "id": "e09fcb6a-f3e3-4eff-9a87-917faf611889"
-    },
-    {
         "title": "Start Heroku",
         "text": "Starting Heroku\n",
         "id": "0e4cb8b8-8401-40d8-94be-2cfa6ce6870a"
+    },
+    {
+        "title": "Creating notes",
+        "text": "Create notes to delete",
+        "id": "8b3ac372-c9c8-4b7b-8bb3-52b486fc9584"
+    },
+    {
+        "title": "Dinner Ideas",
+        "text": "Spaghetti\nSteak\nStuffed Peppers",
+        "id": "0a8e0528-51a7-4e75-ad0d-cb7edbd70999"
     }
 ]
