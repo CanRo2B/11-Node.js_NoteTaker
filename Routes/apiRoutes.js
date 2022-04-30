@@ -24,14 +24,14 @@ api.get('/notes:id', (req, res) => {
       });
   });
 
-// DELETE Route for a specific tip
+// DELETE Route for a specific note
 api.delete('/notes:id', (req, res) => {
     const noteId = req.params.id;
     readFromFile('./db/db.json')
       .then((data) => JSON.parse(data))
       .then((json) => {
-        // Make a new array of all tips except the one with the ID provided in the URL
-        const result = json.filter((tip) => note.id !== noteId);
+        // Make a new array of all notes except the one with the ID provided in the URL
+        const result = json.filter((note) => note.id !== noteId);
   
         // Save that array to the filesystem
         writeToFile('./db/db.json', result);
