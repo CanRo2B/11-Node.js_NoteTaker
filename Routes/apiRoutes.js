@@ -1,19 +1,48 @@
 // Todo: Require the router and db items needed (video 17:35)
-const { application } = require("express");
-const path = require("path");
 const api = require("express").Router();
-const { readFromFile, readAndAppend } = require("../db/store");
-const uuid = require("../db/uuid");
-const router = require("./htmlRoutes");
+const {v4: uuidv4 } = require("uuid");
+const {readFromFile,
+readAndAppend,
+writeToFile, } = require("../db/store");
 
 // Get all the notes and send them to the left side of the site
 api.get("/notes", (req, res) => {
-    console.info(`Notes received`);
+    console.info("Notes received");
     readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
+// GET Route for a note id
+api.get('/notes:id', (req, res) => {
+    const noteId = req.params.id;
+    readFromFile(".db/db.json")
+      .then((data) => JSON.parse(data))
+      .then((json) => {
+        const result = json.filter((note) => note.id === noteId);
+        return result.length > 0
+          ? res.json(result)
+          : res.json('No note with that ID');
+      });
+  });
+
+// DELETE Route for a specific tip
+api.delete('/notes:id', (req, res) => {
+    const noteId = req.params.id;
+    readFromFile('./db/db.json')
+      .then((data) => JSON.parse(data))
+      .then((json) => {
+        // Make a new array of all tips except the one with the ID provided in the URL
+        const result = json.filter((tip) => note.id !== noteId);
+  
+        // Save that array to the filesystem
+        writeToFile('./db/db.json', result);
+  
+        // Respond to the DELETE request
+        res.json(`Item ${noteId} has been deleted 🗑️`);
+      });
+  });
+
+
 api.post("/notes", (req, res) => {
-    console.info("Notes added");
     console.log(req.body);
 
     const { title, text } = req.body;
@@ -21,7 +50,8 @@ api.post("/notes", (req, res) => {
     if (req.body) {
         const newNote = {
             title,
-            text
+            text,
+            id: uuidv4(),
         };
 
         readAndAppend(newNote, "./db/db.json");
